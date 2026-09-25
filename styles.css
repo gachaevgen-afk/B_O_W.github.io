@@ -1,0 +1,629 @@
+/* === Сброс и база === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #FDF8F0;
+    color: #3E2E2A;
+    line-height: 1.4;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* === Навигация === */
+.navbar {
+    padding: 28px 0 16px;
+    border-bottom: 1px solid #EADBCE;
+    margin-bottom: 48px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.logo-icon {
+    width: 54px;
+    height: 54px;
+    background: #F7EFE6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid #EBDBCB;
+    transition: transform 0.2s ease;
+    overflow: hidden;
+}
+
+.logo-icon:hover { transform: scale(1.02); }
+.logo-icon img { width: 100%; height: 100%; object-fit: cover; }
+
+.logo-text h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+    color: #4C3A34;
+}
+
+.logo-text p {
+    font-size: 0.85rem;
+    color: #8B7568;
+    margin-top: 4px;
+    font-weight: 400;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #5E4B42;
+    transition: 0.2s;
+    font-size: 1rem;
+    border-bottom: 1px solid transparent;
+}
+
+.nav-links a:hover {
+    color: #B47C5E;
+    border-bottom-color: #DECBB8;
+}
+
+/* === Секции === */
+section { margin-bottom: 90px; }
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: #4C3A34;
+    border-left: 5px solid #E2C7B0;
+    padding-left: 20px;
+    margin-bottom: 40px;
+}
+
+/* ============================================
+   === РЕПЕРТУАР (адаптивный слайдер 4:3) ===
+   ============================================ */
+.repertoire-card {
+    background: #FFFBF5;
+    box-shadow: 0 10px 25px -8px rgba(0, 0, 0, 0.05), 0 2px 6px rgba(0, 0, 0, 0.02);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    overflow: hidden;
+    transition: all 0.2s;
+    border: 1px solid #F0E4D8;
+    align-items: stretch;
+}
+
+/* Контейнер картинки */
+.card-img {
+    flex: 1 1 360px;
+    min-width: 0;
+    position: relative;
+    display: flex;
+}
+
+/* Сам слайдер сохраняет пропорцию 4:3 на любом экране */
+.card-img .playSwiper {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    min-height: 0;
+}
+
+.card-img .swiper-wrapper,
+.card-img .swiper-slide {
+    height: 100%;
+}
+
+.card-img .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Пагинация слайдера картинок */
+.play-pagination {
+    position: absolute;
+    bottom: 12px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 5;
+}
+
+.play-pagination .swiper-pagination-bullet {
+    background: #ffffff;
+    opacity: 0.7;
+    width: 8px;
+    height: 8px;
+    margin: 0 4px !important;
+    transition: all 0.3s ease;
+}
+
+.play-pagination .swiper-pagination-bullet-active {
+    background: #B47C5E;
+    opacity: 1;
+    width: 22px;
+    border-radius: 4px;
+}
+
+/* Текстовая часть карточки */
+.card-content {
+    flex: 1 1 360px;
+    padding: 36px;
+}
+
+.card-content h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #3F2D27;
+}
+
+.card-content h3 a.play-link {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s;
+    border-bottom: 2px solid transparent;
+}
+
+.card-content h3 a.play-link:hover {
+    color: #B47C5E;
+    border-bottom-color: #E2C7B0;
+}
+
+.card-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #5A4640;
+    margin-bottom: 24px;
+}
+
+.play-meta {
+    font-size: 0.85rem;
+    color: #AA8A72;
+    letter-spacing: 0.3px;
+    border-top: 1px dashed #EFE1D4;
+    padding-top: 20px;
+    display: inline-block;
+}
+
+.details-btn {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 10px 22px;
+    background: #ECE0D5;
+    color: #4F3A32;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: 0.2s;
+}
+
+.details-btn:hover {
+    background: #DECEBD;
+    color: #2E211C;
+}
+
+/* ============================================
+   === ЛИТЕРАТУРНО-МУЗЫКАЛЬНЫЕ КОМПОЗИЦИИ ===
+   ============================================ */
+.compositions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 32px;
+}
+
+.composition-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    background: #FFFCF8;
+    border: 1px solid #F6EDE4;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02), 0 2px 4px rgba(0, 0, 0, 0.03);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s;
+    overflow: hidden;
+}
+
+.composition-card:hover {
+    transform: translateY(-6px);
+    border-color: #EAD3C2;
+    box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.08);
+}
+
+.composition-img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: #F2E3DA;
+}
+
+.composition-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.composition-content { padding: 24px 24px 28px; }
+
+.composition-content h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #4E3830;
+    margin-bottom: 10px;
+}
+
+.composition-content p {
+    font-size: 0.95rem;
+    color: #5A4640;
+    line-height: 1.5;
+}
+
+/* ============================================
+   === СОСТАВ (слайдер) ===
+   ============================================ */
+.team-slider-wrapper {
+    position: relative;
+    padding: 0 4px;
+}
+
+.swiper {
+    width: 100%;
+    padding: 16px 0 32px;
+    overflow: hidden;
+}
+
+.team-card {
+    background: #FFFCF8;
+    text-align: center;
+    padding: 32px 16px 28px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02), 0 2px 4px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #F6EDE4;
+    height: 100%;
+}
+
+.team-card:hover {
+    transform: translateY(-6px);
+    border-color: #EAD3C2;
+    box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.08);
+}
+
+.team-photo {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 20px;
+    display: block;
+    border: 3px solid #F5E6DB;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    background: #FCF2EA;
+}
+
+.team-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #4E3830;
+    margin-bottom: 8px;
+}
+
+.team-role {
+    font-size: 0.85rem;
+    color: #AE8F78;
+    font-weight: 500;
+    background: #FEF6EF;
+    display: inline-block;
+    padding: 4px 14px;
+    letter-spacing: 0.2px;
+}
+
+/* Кастомные стрелки */
+.swiper-button-prev-custom,
+.swiper-button-next-custom {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: #FFF7F0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid #F2E3D8;
+    transition: 0.2s;
+    color: #A27B64;
+    font-size: 20px;
+    font-weight: bold;
+    user-select: none;
+}
+
+.swiper-button-prev-custom:hover,
+.swiper-button-next-custom:hover {
+    background: #F1E2D4;
+    color: #7C5C48;
+}
+
+.swiper-button-prev-custom { left: -12px; }
+.swiper-button-next-custom { right: -12px; }
+
+/* ============================================
+   === О НАС ===
+   ============================================ */
+.about-section {
+    background: #FDF6EF;
+    padding: 48px 40px;
+    margin-bottom: 60px;
+    border: 1px solid #F0E1D4;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.02);
+}
+
+.about-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 48px;
+    justify-content: space-between;
+}
+
+.about-text { flex: 2; min-width: 240px; }
+
+.about-text h3 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #45322C;
+}
+
+.about-text p {
+    line-height: 1.6;
+    margin-bottom: 24px;
+    color: #58453E;
+    font-size: 1rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    background: #ECE0D5;
+    padding: 8px 18px;
+    text-decoration: none;
+    color: #4F3A32;
+    font-weight: 500;
+    transition: 0.2s;
+    font-size: 0.9rem;
+}
+
+.social-link:hover {
+    background: #DECEBD;
+    color: #2E211C;
+}
+
+.address-block {
+    flex: 1;
+    min-width: 260px;
+    background: #FFF9F3;
+    padding: 24px 28px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    border: 1px solid #F0E2D6;
+}
+
+.address-block h4 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 12px;
+    color: #5C433A;
+}
+
+.address-block p {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    color: #6E5548;
+}
+
+hr {
+    margin: 20px 0;
+    border: none;
+    height: 1px;
+    background: #EADBCE;
+}
+
+/* === Футер === */
+footer {
+    text-align: center;
+    padding: 32px 0 40px;
+    border-top: 1px solid #EFE2D7;
+    margin-top: 20px;
+    color: #927B6C;
+    font-size: 0.85rem;
+}
+
+/* ============================================
+   === СТРАНИЦА ПОДРОБНОСТЕЙ ===
+   ============================================ */
+.detail-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 24px 80px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 36px;
+    padding: 10px 20px;
+    background: #ECE0D5;
+    color: #4F3A32;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: 0.2s;
+}
+
+.back-link:hover {
+    background: #DECEBD;
+    color: #2E211C;
+}
+
+.detail-page h1 {
+    font-size: 2.6rem;
+    font-weight: 600;
+    color: #3F2D27;
+    margin-bottom: 24px;
+}
+
+.detail-hero {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    margin-bottom: 32px;
+    border: 1px solid #F0E4D8;
+}
+
+.detail-page p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #58453E;
+    margin-bottom: 20px;
+}
+
+.detail-page .play-meta { margin-top: 12px; }
+
+/* ============================================
+   === АДАПТИВ ===
+   ============================================ */
+
+/* Планшеты */
+@media (max-width: 960px) {
+    .section-title { font-size: 2rem; }
+    .card-content { padding: 28px; }
+    .card-content h3 { font-size: 1.7rem; }
+    .about-section { padding: 40px 28px; }
+    .about-grid { gap: 32px; }
+}
+
+/* Мобильные */
+@media (max-width: 700px) {
+    .container { padding: 0 18px; }
+
+    section { margin-bottom: 64px; }
+
+    /* --- Навигация --- */
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 36px;
+        padding: 20px 0 14px;
+    }
+    .logo { flex-wrap: nowrap; }
+    .logo-text h1 { font-size: 1.4rem; }
+    .logo-text p { font-size: 0.78rem; }
+    .nav-links { gap: 20px; }
+    .nav-links a { font-size: 0.92rem; }
+
+    /* --- Заголовки --- */
+    .section-title {
+        font-size: 1.6rem;
+        padding-left: 14px;
+        margin-bottom: 28px;
+    }
+
+    /* --- РЕПЕРТУАР на мобильных --- */
+    .repertoire-card {
+        flex-direction: column;
+        gap: 0;
+    }
+    .card-img {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+    .card-img .playSwiper {
+        aspect-ratio: 4 / 3;
+        width: 100%;
+    }
+    .card-content {
+        flex: 0 0 auto;
+        padding: 24px 20px 28px;
+    }
+    .card-content h3 { font-size: 1.5rem; margin-bottom: 14px; }
+    .card-content p { font-size: 0.95rem; margin-bottom: 18px; }
+    .play-meta { font-size: 0.8rem; padding-top: 16px; }
+    .details-btn { padding: 9px 18px; font-size: 0.85rem; }
+
+    /* --- КОМПОЗИЦИИ на мобильных --- */
+    .compositions-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .composition-img { aspect-ratio: 16 / 10; }
+    .composition-content { padding: 20px; }
+    .composition-content h3 { font-size: 1.25rem; }
+    .composition-content p { font-size: 0.9rem; }
+
+    /* --- СОСТАВ на мобильных --- */
+    .swiper-button-prev-custom,
+    .swiper-button-next-custom { display: none; }
+    .team-card { padding: 26px 14px 24px; }
+    .team-photo { width: 110px; height: 110px; }
+    .team-name { font-size: 1.05rem; }
+    .team-role { font-size: 0.78rem; padding: 3px 12px; }
+
+    /* --- О НАС --- */
+    .about-section { padding: 28px 20px; }
+    .about-text h3 { font-size: 1.5rem; }
+    .about-text p { font-size: 0.95rem; }
+    .address-block { padding: 20px 22px; }
+
+    /* --- СТРАНИЦА ПОДРОБНОСТЕЙ --- */
+    .detail-page { padding: 36px 20px 60px; }
+    .detail-page h1 { font-size: 1.8rem; margin-bottom: 18px; }
+    .detail-hero { aspect-ratio: 4 / 3; margin-bottom: 24px; }
+    .detail-page p { font-size: 0.98rem; line-height: 1.65; }
+    .back-link { padding: 9px 16px; font-size: 0.85rem; margin-bottom: 24px; }
+}
+
+/* Очень узкие экраны */
+@media (max-width: 400px) {
+    .container { padding: 0 14px; }
+    .logo-icon { width: 46px; height: 46px; }
+    .logo-text h1 { font-size: 1.25rem; }
+    .nav-links { gap: 14px; }
+    .nav-links a { font-size: 0.88rem; }
+    .section-title { font-size: 1.45rem; }
+    .card-content h3 { font-size: 1.35rem; }
+    .team-photo { width: 96px; height: 96px; }
+}

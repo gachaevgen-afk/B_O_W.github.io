@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Чёрным по белому — студенческий театр</title>
+    <link rel="icon" href="LogoBOW.jpg" type="image">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="container">
+    <!-- Header / навигация -->
+    <div class="navbar">
+        <div class="logo">
+            <div class="logo-icon">
+                <img src="LogoBOW.jpg" alt="Логотип" width="50" height="50"/>
+            </div>
+            <div class="logo-text">
+                <h1>Чёрным по белому</h1>
+                <p>студенческий театр</p>
+            </div>
+        </div>
+        <div class="nav-links">
+            <a href="#repertoire">Репертуар</a>
+            <a href="#compositions">Композиции</a>
+            <a href="#team">Состав</a>
+            <a href="#about">О театре</a>
+        </div>
+    </div>
+
+    <!-- Секция Репертуар -->
+    <section id="repertoire">
+        <div class="section-title">Репертуар</div>
+        <div class="repertoire-card">
+            <!-- Слайдер с 3 картинками -->
+            <div class="card-img">
+                <div class="swiper playSwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="NOS.jpg" alt="Сцена спектакля 'Нос' 1">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="NOS2.jpg" alt="Сцена спектакля 'Нос' 2">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="NOS3.jpg" alt="Сцена спектакля 'Нос' 3">
+                        </div>
+                    </div>
+                    <div class="swiper-pagination play-pagination"></div>
+                </div>
+            </div>
+            <div class="card-content">
+                <!-- Название — ссылка на страницу подробностей -->
+                <h3><a href="nos.html" class="play-link">«Нос»</a></h3>
+                <p>Сюрреалистическая повесть Гоголя о том,
+                    как у петербургского майора Ковалёва сбегает собственный нос,
+                    притворяясь важным государственным чиновником.</p>
+                <div class="play-meta">рейтинг: 12+  ·  Длительность: 30 мин</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Новая секция: Литературно-музыкальные композиции -->
+    <section id="compositions">
+        <div class="section-title">Литературно-музыкальные композиции</div>
+        <div class="compositions-grid">
+            <a href="kompoziciya1.html" class="composition-card">
+                <div class="composition-img">
+                    <img src="Comp1.jpg" alt="Композиция 1">
+                </div>
+                <div class="composition-content">
+                    <h3>«Времена года»</h3>
+                    <p>Поэтическое путешествие по стихам русских классиков в сопровождении живой музыки.</p>
+                </div>
+            </a>
+            <a href="kompoziciya2.html" class="composition-card">
+                <div class="composition-img">
+                    <img src="Comp2.jpg" alt="Композиция 2">
+                </div>
+                <div class="composition-content">
+                    <h3>«Письма с фронта»</h3>
+                    <p>Трогательная композиция о судьбах людей в годы Великой Отечественной войны.</p>
+                </div>
+            </a>
+            <a href="kompoziciya3.html" class="composition-card">
+                <div class="composition-img">
+                    <img src="Comp3.jpg" alt="Композиция 3">
+                </div>
+                <div class="composition-content">
+                    <h3>«Серебряный век»</h3>
+                    <p>Поэзия и музыка начала XX века — Ахматова, Цветаева, Блок.</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Секция Состав: слайдер с автопрокруткой -->
+    <section id="team">
+        <div class="section-title">Состав</div>
+        <div class="team-slider-wrapper" style="position: relative;">
+            <div class="swiper teamSwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="team-card">
+                            <img class="team-photo" src="Ulia_Vladimirovna.jpg" alt="Юлия Пирюткина">
+                            <div class="team-name">Пирюткина Юлия Владимировна</div>
+                            <div class="team-role">Руководитель театра, Режиссёр</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="team-card">
+                            <img class="team-photo" src="Aleksey.jpg" alt="Алексей Шипков">
+                            <div class="team-name">Шипков Алексей Михайлович</div>
+                            <div class="team-role">Звукооператор</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="team-card">
+                            <img class="team-photo" src="Evgenii.jpg" alt="Евгений Ревоненко">
+                            <div class="team-name">Ревоненко Евгений Кириллович</div>
+                            <div class="team-role">Ведущий актёр</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="team-card">
+                            <img class="team-photo" src="Sophia.jpg" alt="Софья Васина">
+                            <div class="team-name">Васина Софья Вадимовна</div>
+                            <div class="team-role">Ведущая актриса</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="team-card">
+                            <img class="team-photo" src="Vova.jpg" alt="Владимир Сальников">
+                            <div class="team-name">Сальников Владимир Александрович</div>
+                            <div class="team-role">актёр</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="team-card">
+                            <img class="team-photo" src="Nastya.jpg" alt="Анастасия Исакова">
+                            <div class="team-name">Исакова Анастасия Вячеславовна</div>
+                            <div class="team-role">Актриса</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="team-card">
+                            <img class="team-photo" src="Nikita.jpg" alt="Никита Ржепко">
+                            <div class="team-name">Ржепко Никита Олегович</div>
+                            <div class="team-role">Актёр</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="team-card">
+                            <img class="team-photo" src="Alina.jpg" alt="Алина Дубровина">
+                            <div class="team-name">Дубровина Алина Александровна</div>
+                            <div class="team-role">Актриса</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="team-card">
+                            <img class="team-photo" src="Vlad.jpg" alt="Владислав Бербега">
+                            <div class="team-name">Бербега Владислав Владимирович</div>
+                            <div class="team-role">Актёр</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="team-card">
+                            <img class="team-photo" src="Lera.jpg" alt="Валерия Сиротина">
+                            <div class="team-name">Сиротина Валерия Игоревна</div>
+                            <div class="team-role">Актриса</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination" style="position: relative; margin-top: 8px;"></div>
+            </div>
+            <div class="swiper-button-prev-custom" id="customPrevTeam">‹</div>
+            <div class="swiper-button-next-custom" id="customNextTeam">›</div>
+        </div>
+    </section>
+
+    <!-- Блок "О нас" -->
+    <section id="about">
+        <div class="about-section">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3>О театре</h3>
+                    <p>«Чёрным по белому» — это молодой, дерзкий и душевный студенческий театр, где каждый спектакль рождается из живого диалога со зрителем. 
+                        Мы исследуем классику и современную драматургию, добавляя искренность и честность. 
+                        Наша труппа — это не просто актёры, а единая семья, объединённая любовью к перевоплощению и магии сцены.</p>
+                    <p>Театр основан в 2019 году и уже получил признание на университетских фестивалях. 
+                        Репертуар обновляется каждый год, а двери всегда открыты для талантливых ребят, желающих попробовать себя.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">ВКонтакте</a>
+                        <a href="#" class="social-link">YouTube-канал</a>
+                    </div>
+                </div>
+                <div class="address-block">
+                    <h4>Наш адрес</h4>
+                    <p>г. Хабаровск, ул. Волочаевская, д. 1</p>
+                    <p>Телефон: +7 (###) ###-##-##</p>
+                    <p>Почта: teatr.chernim@student.theatre</p>
+                    <hr>
+                    <p>Репетиции и спектакли — КГБПОУ ХКОТСО.</p>
+                    <p>Среда и пятница с 14:00–16:30</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Студенческий театр «Чёрным по белому» — место, где рождаются смыслы. © 2026</p>
+    </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="scripts.js"></script>
+</body>
+</html>
